@@ -7,7 +7,7 @@
 ## Javascript
 ### electron
 
-- [일렉트론 프로세스와 ipc](https://github.com/fifteenmania/fifteenmania/blob/main/electron/electron-procsss-and-ipc.md)
+- [일렉트론 프로세스와 ipc](https://github.com/fifteenmania/TIL/blob/master/electron/electron-process-and-ipc.md)
 
 ## JAVA
 ### mybatis
