@@ -6,12 +6,11 @@
 - 메인 프로세스는 네이티브 OS의 기능을 직접 지원하는 API에 접근 가능하다. 즉, nodejs의 모듈을 직접 사용할 수 있다.
 - 렌더러 프로세스는 개별 BrowserWindow에 붙어서 작동한다.
 - 렌더러 프로세스는 웹 브라우저의 렌더러와 매우 유사하게 작동한다.
-- 렌더러 프로세스에서 nodeIntegration: true 가 아닐 경우 노드 모듈을 사용하기 위해 웹팩 등의 컴파일러를 필요로 한다. 일반적 웹 모듈과 유사하다.
 - https://www.electronjs.org/docs/latest/tutorial/process-model
 
 ## preload script
 - contextIsolation: true 로 렌더러 프로세스를 실행하면 메인 프로세스로의 모든 직접 접근이 차단된다. 
-- preload srcipt에서 conetextBridge.exposeMainWorld를 통해 렌더러 프로세스에서 접근 가능한 메인 프로세의 API를 제공할 수 있다.
+- preload srcipt에서 conetextBridge.exposeMainWorld를 통해 렌더러 프로세스에서 접근 가능한 메인 프로세스의 API를 제공할 수 있다.
 
 ## ipcMain
 - 메인 프로세스에서 렌더러 프로세스와의 통신을 위한 모듈이다.
