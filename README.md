@@ -7,9 +7,9 @@
 ## Javascript
 ### electron
 
-- [일렉트론 프로세스와 ipc](https://github.com/fifteenmania/TIL/blob/master/electron/electron-process-and-ipc.md)
+- [일렉트론 프로세스와 ipc](./electron/electron-process-and-ipc.md)
 
-- [예제: contextIsolation 모드의 렌더러 프로세스에서 노드 모듈 사용하기](https://github.com/fifteenmania/TIL/blob/master/electron/example-import-node-on-renderer.md)
+- [예제: contextIsolation 모드의 렌더러 프로세스에서 노드 모듈 사용하기](./electron/example-import-node-on-renderer.md)
 
 ## JAVA
 ### mybatis
