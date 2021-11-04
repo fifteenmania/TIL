@@ -14,7 +14,7 @@
 
 ## ipcMain
 - 메인 프로세스에서 렌더러 프로세스와의 통신을 위한 모듈이다.
-- 일반적으로 렌더러 프로세스의 요청에 대한 응답만을 정의한다. 메인 프로세스에서 먼저 요청을 보낼 때는 다른 모듈을 사용한다.
+- 렌더러 프로세스의 요청에 대한 응답만을 정의한다. 메인 프로세스에서 먼저 요청을 보낼 때는 webContents 모듈을 사용한다.
 - https://www.electronjs.org/docs/latest/api/ipc-main
 ### ipcMain.handle(channel, listener) 
 - 리턴 값이 요청에 대한 응답값으로 사용된다. 
@@ -30,12 +30,13 @@
 - 자바스크립트의 event hander 등에 붙여서 사용한다.
 - https://www.electronjs.org/docs/latest/api/ipc-renderer
 ### ipcRenderer.on(channel, listener)
-- ipcMain의 비동기 응답에 대응하기 위한 함수이다.
+- ipcMain의 비동기 응답 또는 요청에 대응하기 위한 함수이다.
 - 보통 ipcRenderer.send -> ipcMain.on -> ipcRenderer.on 의 형태가 된다.
+- 또는 browserWindow.webContents.send -> ipcRenderer.on 도 가능하다.
 ### ipcRenderer.send(channel, listener)
 - 특정 채널에 응답을 요청한다.
 - 동기나 비동기 요청을 모두 보낼 수 있다.
-- 입력 인자들은 직렬화된다.
+- 입력 인자들은 복제/직렬화된다.
 - DOM element는 전송할 수 없다. POJO 만을 지원한다.
 - structured clone algorithm을 사용한다고 하는데 뭔지 더 봐야 할 것 같다.
 ### ipcRenderer.invoke(channel, listener)
@@ -44,4 +45,4 @@
 
 ## 이 장에 대한 고민
 - string을 채널명으로 쓰는데 코드 여러 부분에 채널명이 흩어져 있으면 유지보수가 어렵지 않나? 한 곳에서 정리할 방법은 없을까?
-- 일반적으로 event handler는 가볍게 유지하라는 말이 있는데, 그러면 무거운 로직을 어디서 처리하는 게 좋을까?
+- 일반적으로 event handler는 가볍게 유지하라는 말이 있는데, 그러면 무거운 로직을 어디서 처리하는 게 좋을까? -> webWorker와 유사한 백그라운드 프로세스를 지원하는 것 같다.
