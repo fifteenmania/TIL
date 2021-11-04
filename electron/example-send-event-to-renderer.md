@@ -10,17 +10,18 @@
 // main.js
 const focusedWindow = BrowserWindow.getFocusedWindow()
 loadTextFile(focusedWindow).then((result)=>
-    focusedWindow.webContents.send('file-render:opened', result))
+    focusedWindow.webContents.send('file-render:opened', result)
+)
 ```
 
 ```javascript
 // preload.js
 function dispatchMainEvent(eventName, payload) {
-    const mainHandler = document.getElementById('main-event-receiver');
+    const mainEventReceiver = document.getElementById('main-event-receiver');
     const openedEvent = new CustomEvent(eventName, {
         detail: payload,
     })
-    mainHandler.dispatchEvent(openedEvent);
+    mainEventReceiver.dispatchEvent(openedEvent);
 }
 
 ipcRenderer.on('file-render:opened', (event, result) => {
