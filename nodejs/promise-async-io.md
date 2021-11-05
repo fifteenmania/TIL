@@ -6,7 +6,53 @@
 ## 프로미스 기반 api
 - nodejs v10.0.0 버전에서 프로미스 기반 입출력 api가 추가되었다.
 
-## 한 번에 읽고 쓰기
+## 디렉토리 읽기
+### fsPromises.openDir(path[, options])
+```javascript
+try {
+  const dir = await opendir('./');
+  for await (const dirent of dir)
+    console.log(dirent.name);
+} catch (err) {
+  console.error(err);
+}
+```
+- fs.Dir 객체를 반환한다.
+- fs.Dir 객체는 async iterator에서 fs.Dirent 객체를 반환한다.
+- fs.Dir 객체는 async iterator가 종료될 때에 자동으로 회수된다.
+
+### fs.Dirent
+- ```fs.name```으로 폴더 또는 파일명을 얻을 수 있다. 
+- ```fs.isDirectory()```메소드로 폴더인지 여부를 알 수 있다.
+
+### 예제: 디렉토리 트리 재귀 파싱
+```javascript
+async function getDirectoryTree(dirName) {
+    const result = {
+        path: dirName,
+        name: path.basename(dirName),
+        items: []
+    }
+    const dir = await opendir(dirName, {encoding: 'utf-8'});
+    for await (const dirent of dir) {
+        const direntPath = path.join(dirName, dirent.name)
+        if (dirent.isDirectory()) {
+            const subTree = await getDirectoryTree(direntPath)
+            result.items.push(subTree);
+        } else {
+            result.items.push({
+                path: direntPath,
+                name: dirent.name,
+                items: null
+            })
+        }
+    }
+    return result;
+}
+```
+- async iterator를 이용하여 간편하게 파싱할 수 있다.
+
+## 파일 한 번에 읽고 쓰기
 ### fsPromises.readFile(path[, options])
 ```javascript
 const path = './my/app/path';
@@ -18,7 +64,7 @@ try{
 ```
 - FileHandle 오브젝트 또는 url을 인자로 넣어도 된다.
 - 성공시 파일 내용을 리턴한다.
-- 공식 문서에서는 AbortController() 를 사용하여 입출력을 중간에 취소할 수 있다고 하는데, 쓸 일이 있을까?
+- 공식 문서에서는 AbortController() 를 사용하여 입출력을 중간에 취소할 수 있다고 한다.
 
 ### fsPromises.write(file, data[, options])
 ```javascript
