@@ -1,6 +1,5 @@
 # 이슈: node 최신 버전 사용시 openssl 오류
 - nodejs 최신 버전을 사용했을 경우, cra로 리액트 앱 생성 후 npm start 했을 때 openssl 관련 오류가 생기며 실행되지 않는다.
-- 
 
 ## 에러 전문
 ```console
