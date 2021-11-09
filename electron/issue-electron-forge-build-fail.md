@@ -37,3 +37,6 @@ Error: spawn mono ENOENT
 ## 향후 시도해볼 방법들
 - 빌드 도구를 electron-packager로 바꾸면 어떨까? 같은 오류를 겪은 사람이 있다고 한다. [참고](https://stevenklambert.com/writing/comprehensive-guide-building-packaging-electron-app/)
 - 소스 코드를 직접 받아서 빌드하는 게 가능하다고 한다. electron-forge 문제라면 이것도 시도해 볼 만해 보인다. [참고](https://www.electronjs.org/docs/latest/tutorial/application-distribution)
+
+## 시도 결과
+- electron-packager를 사용하였을 경우 빌드 성공하며 windows에서도 실행되는 것을 확인하였다. 소스 코드를 받아서 빌드하는 것과 같은 방법으로 빌드하는 걸로 보인다.
