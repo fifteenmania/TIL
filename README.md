@@ -25,9 +25,14 @@
 
 ### Webpack
 - [CRA 없이 리액트 빌드 설정하기](./webpack/react-without-cra.md)
+- [git page에 빌드 결과물만 배포하기](./webpack/gitpage-deploy.md)
 
 ## HTML/CSS
 
+## Utils
+### git
+- [git switch 와 checkout]
+- [git worktree]
 
 ## Java
 ### MyBatis
