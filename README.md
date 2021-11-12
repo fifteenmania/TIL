@@ -10,6 +10,8 @@
 
 - [electronPackager를 이용한 일렉트론 앱 빌드](./electron/electron-packager.md)
 
+- [이슈: react is not defined 문제](./electron/issue-react-is-not-defined.md)
+
 - [이슈: electronForge의 windows 빌드 실패 문제](./electron/issue-electron-forge-build-fail.md)
 
 - [예제: contextIsolation 모드의 렌더러 프로세스에서 노드 모듈 사용하기](./electron/example-import-node-on-renderer.md)
@@ -20,7 +22,6 @@
 - [promise를 사용한 비동기 파일 입출력](./nodejs/promise-async-io.md)
 
 ### React
-
 - [이슈: node 최신 버전 사용시 openssl 오류](./react/issue-openssl.md)
 
 ### Webpack
