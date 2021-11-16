@@ -49,3 +49,46 @@ mainEventReceiver.addEventListener('file-render:opened', (event) => {
 - 위 코드에서 preload.js의 dispatchMainEvent가 해당 역할을 한다.
 - html에서 메인 이벤트 수신용의 hidden input을 하나 추가하여, cutomEvent를 여기로 전송시켰다.
 - 레이어가 하나 추가되어 이벤트를 두 곳에서나 처리해야 하는 번거로움이 있지만, main과 renderer간 종속성 없이 이벤트를 처리할 수 있게 되었다.
+
+## 메인 이벤트를 React 내부 virtual dom으로 전송
+```javascript
+// preload.js
+function dispatchMainEvent(eventType, payload) {
+    const event = new CustomEvent(eventType, {detail: payload});
+    document.dispatchEvent(event);
+}
+```
+```javascript
+// hook.js
+import { useEffect, useState } from "react"
+
+function useEvent(eventType, initialState, listener) {
+    const [state, setState] = useState(initialState);
+    useEffect(() => {
+        const handleEvent = (event) => listener(event.detail);
+        document.addEventListener(eventType, handleEvent);
+        return () => document.removeEventListener(eventType, handleEvent);
+    })
+    return [state, setState];
+}
+
+export { useEvent } 
+```
+```javascript
+// FileTreeContainer.js
+function FileTreeContainer() {    
+    const [fileTreeData, setFileTreeData] = useEvent("file:dir-opened", initialTreeData, (result) => {
+        if (!result.canceled) {
+            setFileTreeData(result.content);
+        }
+    });
+    return <section className="file-tree-container">
+        <FileTreeTitle />
+        <FileTreeMenu data={fileTreeData}/>
+    </section>
+}
+```
+
+- 위의 아이디어에서 한 가지를 추가하여, custom event를 수신하는 훅을 정의하였다.
+- preload.js의 dispatchMainEvent가 main event를 customEvent 클래스로 변환해 document에 전파하면 useEvent 훅이 감지한다.
+- 위와 같이 리액트 사상에 위배되지 않고 메인 이벤트를 처리할 수 있다.
