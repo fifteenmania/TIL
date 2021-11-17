@@ -33,8 +33,7 @@
 
 ## Utils
 ### git
-- [git switch 와 checkout]
-- [git worktree]
+- [git worktree](./git/worktree.md)
 
 ## Java
 ### MyBatis
