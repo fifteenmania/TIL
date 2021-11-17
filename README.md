@@ -22,6 +22,7 @@
 - [promise를 사용한 비동기 파일 입출력](./nodejs/promise-async-io.md)
 
 ### React
+- [효율적 resizable sidebar 구현하기](./react/resizable-sidebar.md)
 - [이슈: node 최신 버전 사용시 openssl 오류](./react/issue-openssl.md)
 
 ### Webpack
