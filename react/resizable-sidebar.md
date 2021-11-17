@@ -56,7 +56,7 @@ function FileTreeWrapper() {
     const [width, setWidth] = useState(100);
     return <section className="file-tree-wrapper" style={{width:width}}>
         <FileTree />
-        <Resizer sidebarRef={fileTreeContainerRef} setWidth={setWidth}/>
+        <Resizer setWidth={setWidth}/>
     </section>
 }
 ```
