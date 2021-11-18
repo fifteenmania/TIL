@@ -31,9 +31,12 @@
 
 ## HTML/CSS
 
-## Utils
+## Misc
 ### git
 - [git worktree](./git/worktree.md)
+
+### http
+- [http 상태 코드](./http/http-status-code.md)
 
 ## Java
 ### MyBatis
