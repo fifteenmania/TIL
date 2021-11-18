@@ -39,7 +39,7 @@
 - [http 상태 코드](./http/http-status-code.md)
 
 ### browser
-- [재미있는 브라우저 user-agent 이야기](./brower/user-agent.md)
+- [재미있는 브라우저 user-agent 이야기](./browser/user-agent.md)
 
 ## Java
 ### MyBatis
