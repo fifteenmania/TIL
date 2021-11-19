@@ -28,3 +28,16 @@ npm run build
 ```
 - 잘못해서 .git 파일째로 폴더를 날려버렸을 경우 prune 명령어로 워크트리를 정리해 준다.
 - 리모트의 gh-pages 브랜치와 연결하여 배포 브랜치를 다시 설정한다.
+
+## 웹팩 설정 수정
+```js
+// webpack.config.js
+module.exports{
+    output: {
+        clean: {
+            keep: ".git"
+        },
+    }
+}
+```
+- 웹팩이 빌드할 때 .git 파일을 지워버리면 안 되기 때문에 keep 설정해 준다. 
