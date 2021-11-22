@@ -30,18 +30,22 @@
 - [git page에 빌드 결과물만 배포하기](./webpack/gitpage-deploy.md)
 - [개발용 dev-server 설정](./webpack/dev-server.md)
 
-## HTML/CSS
 ### D3
 - [d3 기초](./d3/tutorials.md)
 
-## Misc
-### git
-- [git worktree](./git/worktree.md)
-
-### http
+## 웹 표준
+### Http
 - [http 상태 코드](./http/http-status-code.md)
 
-### browser
+### 기타 웹 표준
+- [SVG 요소 기초](./svg/elements.md)
+- [SVG path](./svg/path.md)
+
+## Misc
+### Git
+- [git worktree](./git/worktree.md)
+
+### Web Ecosystem
 - [재미있는 브라우저 user-agent 이야기](./browser/user-agent.md)
 
 ## Java

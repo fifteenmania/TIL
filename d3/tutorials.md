@@ -28,7 +28,7 @@ p.exit().remove();
 
 ## 조작자
 - .style 함수로 html 요소의 css를 조작한다.
-- .attr 함수로 svg 요소를 조작한다.
+- .attr 함수로 요소의 어트리뷰트를 조작한다.
 - .append 함수로 새로운 요소를 하위 요소로 삽입한다.
 - .on 함수로 이벤트 리스너를 삽입한다.
 - .transition 함수로 interpolation을 사용하여 점진적인 스타일 변화를 지원한다. 
