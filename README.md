@@ -41,6 +41,10 @@
 - [SVG 요소 기초](./svg/elements.md)
 - [SVG path](./svg/path.md)
 
+## Rust
+### 언어 기초
+- [소유권(ownership)과 대여(borrow)](./rust/ownership-and-borrow.md)
+
 ## Misc
 ### Git
 - [git worktree](./git/worktree.md)
