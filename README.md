@@ -15,7 +15,8 @@
 
 ### NodeJs
 - [promise를 사용한 비동기 파일 입출력](./nodejs/promise-async-io.md)
-- [CommonJS와 ES Module 차이](./nodejs/commonjs-and-es.md)
+- [자바스크립트의 모듈 시스템](./nodejs/commonjs-and-es.md)
+- [chai의 should/expect/assert 비교](./nodejs/chai-assertion-styles.md)
 
 ### React
 - [효율적 resizable sidebar 구현하기](./react/resizable-sidebar.md)
