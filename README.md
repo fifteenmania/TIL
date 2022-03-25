@@ -21,6 +21,7 @@
 ### React
 - [효율적 resizable sidebar 구현하기](./react/resizable-sidebar.md)
 - [이슈: node 최신 버전 사용시 openssl 오류](./react/issue-openssl.md)
+- [push-dir을 이용해 gh-pages없이 배포하기](./react/push-dir-diploy.md)
 
 ### 빌드와 배포
 - [webpack 으로 CRA 없이 리액트 빌드 설정하기](./jsbuild/react-without-cra.md)
